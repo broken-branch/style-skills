@@ -1,0 +1,5 @@
+interface:
+  display_name: "Code style (house)"
+  short_description: "Commit messages, code review, and shared code rules"
+policy:
+  allow_implicit_invocation: true

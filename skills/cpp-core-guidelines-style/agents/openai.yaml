@@ -1,0 +1,4 @@
+interface:
+  display_name: "C++ style: Core Guidelines"
+policy:
+  allow_implicit_invocation: false

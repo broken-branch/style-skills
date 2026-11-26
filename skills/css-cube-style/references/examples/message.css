@@ -1,0 +1,15 @@
+/* CUBE CSS: Block and Exception [CUBE-CSS].
+   Original example: data-tone="urgent" changes only a message's emphasis. */
+
+.message {
+  padding: 1rem;
+  border-inline-start: 0.25rem solid #536273;
+  background: #f3f5f7;
+  color: #243243;
+}
+
+.message[data-tone="urgent"] {
+  border-inline-start-color: #8c2929;
+  background: #fff2f2;
+  color: #651c1c;
+}

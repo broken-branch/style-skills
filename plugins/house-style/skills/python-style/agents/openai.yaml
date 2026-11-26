@@ -1,0 +1,5 @@
+interface:
+  display_name: "Python style (house)"
+  short_description: "House style for Python code and reviews"
+policy:
+  allow_implicit_invocation: true

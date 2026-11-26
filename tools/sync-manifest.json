@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "skill": "code-style",
+      "inputs": {
+        "code/shared.md": "references/guide.md",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "rust-style",
+      "inputs": {
+        "code/rust.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/rust/Cargo.lints.toml": "references/config/Cargo.lints.toml",
+        "configs/rust/clippy.toml": "references/config/clippy.toml",
+        "configs/rust/rust-toolchain.toml": "references/config/rust-toolchain.toml",
+        "configs/rust/rustfmt.toml": "references/config/rustfmt.toml",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "go-style",
+      "inputs": {
+        "code/go.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/go/.golangci.yml": "references/config/.golangci.yml",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "cpp-style",
+      "inputs": {
+        "code/cpp.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/cpp/.clang-format": "references/config/.clang-format",
+        "configs/cpp/.clang-tidy": "references/config/.clang-tidy",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "typescript-style",
+      "inputs": {
+        "code/typescript.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "code/react.md": "references/related/react.md",
+        "code/html.md": "references/related/html.md",
+        "configs/html/.htmlvalidate-rendered.json": "references/config/html/.htmlvalidate-rendered.json",
+        "configs/html/.htmlvalidate.json": "references/config/html/.htmlvalidate.json",
+        "configs/react/eslint.config.js": "references/config/react/eslint.config.js",
+        "configs/typescript/eslint.config.js": "references/config/eslint.config.js",
+        "configs/typescript/tsconfig.base.json": "references/config/tsconfig.base.json",
+        "configs/.editorconfig": "references/config/.editorconfig",
+        "configs/.prettierrc.json": "references/config/.prettierrc.json"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "react-style",
+      "inputs": {
+        "code/react.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "code/typescript.md": "references/related/typescript.md",
+        "code/html.md": "references/related/html.md",
+        "configs/html/.htmlvalidate-rendered.json": "references/config/html/.htmlvalidate-rendered.json",
+        "configs/html/.htmlvalidate.json": "references/config/html/.htmlvalidate.json",
+        "configs/react/eslint.config.js": "references/config/eslint.config.js",
+        "configs/typescript/eslint.config.js": "references/config/typescript/eslint.config.js",
+        "configs/typescript/tsconfig.base.json": "references/config/typescript/tsconfig.base.json",
+        "configs/.editorconfig": "references/config/.editorconfig",
+        "configs/.prettierrc.json": "references/config/.prettierrc.json"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "vue-style",
+      "inputs": {
+        "code/vue.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "code/typescript.md": "references/related/typescript.md",
+        "code/css.md": "references/related/css.md",
+        "code/react.md": "references/related/react.md",
+        "code/html.md": "references/related/html.md",
+        "configs/css/.stylelintrc.json": "references/config/css/.stylelintrc.json",
+        "configs/html/.htmlvalidate-rendered.json": "references/config/html/.htmlvalidate-rendered.json",
+        "configs/html/.htmlvalidate.json": "references/config/html/.htmlvalidate.json",
+        "configs/react/eslint.config.js": "references/config/react/eslint.config.js",
+        "configs/typescript/eslint.config.js": "references/config/typescript/eslint.config.js",
+        "configs/typescript/tsconfig.base.json": "references/config/typescript/tsconfig.base.json",
+        "configs/vue/eslint.config.js": "references/config/eslint.config.js",
+        "configs/.editorconfig": "references/config/.editorconfig",
+        "configs/.prettierrc.json": "references/config/.prettierrc.json"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "html-style",
+      "inputs": {
+        "code/html.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/html/.htmlvalidate-rendered.json": "references/config/.htmlvalidate-rendered.json",
+        "configs/html/.htmlvalidate.json": "references/config/.htmlvalidate.json",
+        "configs/.editorconfig": "references/config/.editorconfig",
+        "configs/.prettierrc.json": "references/config/.prettierrc.json"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "css-style",
+      "inputs": {
+        "code/css.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "code/vue.md": "references/related/vue.md",
+        "code/typescript.md": "references/related/typescript.md",
+        "code/react.md": "references/related/react.md",
+        "code/html.md": "references/related/html.md",
+        "configs/css/.stylelintrc.json": "references/config/.stylelintrc.json",
+        "configs/html/.htmlvalidate-rendered.json": "references/config/html/.htmlvalidate-rendered.json",
+        "configs/html/.htmlvalidate.json": "references/config/html/.htmlvalidate.json",
+        "configs/react/eslint.config.js": "references/config/react/eslint.config.js",
+        "configs/typescript/eslint.config.js": "references/config/typescript/eslint.config.js",
+        "configs/typescript/tsconfig.base.json": "references/config/typescript/tsconfig.base.json",
+        "configs/vue/eslint.config.js": "references/config/vue/eslint.config.js",
+        "configs/.editorconfig": "references/config/.editorconfig",
+        "configs/.prettierrc.json": "references/config/.prettierrc.json"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "python-style",
+      "inputs": {
+        "code/python.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/python/pyproject.toml": "references/config/pyproject.toml",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "bash-style",
+      "inputs": {
+        "code/bash.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/bash/.editorconfig": "references/config/.editorconfig",
+        "configs/bash/.shellcheckrc": "references/config/.shellcheckrc",
+        "configs/.editorconfig": "references/config/common/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "powershell-style",
+      "inputs": {
+        "code/powershell.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/powershell/PSScriptAnalyzerSettings.psd1": "references/config/PSScriptAnalyzerSettings.psd1",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": []
+    },
+    {
+      "skill": "sql-style",
+      "inputs": {
+        "code/sql.md": "references/guide.md",
+        "code/shared.md": "references/shared.md",
+        "configs/sql/.sqlfluff": "references/config/.sqlfluff",
+        "configs/sql/migrations.sqlfluff": "references/config/migrations.sqlfluff",
+        "configs/.editorconfig": "references/config/.editorconfig"
+      },
+      "omitted_links": [
+        {
+          "file": "references/guide.md",
+          "target": "configs/sql/migrations/README.md",
+          "label": "Migration transaction guidance"
+        }
+      ]
+    },
+    {
+      "skill": "design-style",
+      "inputs": {
+        "design/tokens.json": "references/tokens.json",
+        "design/tokens.css": "references/tokens.css"
+      },
+      "filter": "house-design-tokens-v1",
+      "omitted_links": [],
+      "transformations": [
+        "replace source metadata",
+        "generic system font stacks",
+        "public ownership token names",
+        "remove CSS comments",
+        "validate schema, CSS parity and unrounded contrast"
+      ]
+    }
+  ]
+}

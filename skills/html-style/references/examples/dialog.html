@@ -1,0 +1,58 @@
+<!-- [LEARN-HTML] native modal; [WCAG22] named dialog, deliberate initial focus, Tab wrapping and opener restoration.
+     Neutral tokens are declared first in the adjacent CSS. Open this file locally. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Choose a view</title>
+    <link rel="stylesheet" href="controls.css" />
+  </head>
+  <body class="demo-panel">
+    <main>
+      <h1>Choose a view</h1>
+      <button class="demo-button" type="button" data-open>
+        Open view chooser
+      </button>
+      <dialog class="demo-dialog" data-dialog aria-labelledby="chooser-title">
+        <h2 id="chooser-title">Use the compact view?</h2>
+        <p>This example changes only the status below.</p>
+        <div class="demo-row">
+          <button class="demo-button" type="button" data-cancel>Cancel</button>
+          <button class="demo-button" type="button" data-apply>
+            Apply view
+          </button>
+        </div>
+      </dialog>
+      <p role="status" data-notice></p>
+    </main>
+    <script>
+      const opener = document.querySelector('[data-open]');
+      const dialog = document.querySelector('[data-dialog]');
+      const cancel = dialog.querySelector('[data-cancel]');
+      const apply = dialog.querySelector('[data-apply]');
+      const notice = document.querySelector('[data-notice]');
+      opener.addEventListener('click', () => {
+        dialog.showModal();
+        cancel.focus();
+      });
+      cancel.addEventListener('click', () => dialog.close());
+      apply.addEventListener('click', () => {
+        notice.textContent = 'Compact view selected.';
+        dialog.close();
+      });
+      dialog.addEventListener('close', () => opener.focus());
+      // These two persistent enabled buttons are this dialog's entire Tab order.
+      // Recompute the order if adapting this example to dynamic content.
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key !== 'Tab') return;
+        const boundary = event.shiftKey ? cancel : apply;
+        if (document.activeElement === boundary) {
+          event.preventDefault();
+          (event.shiftKey ? apply : cancel).focus();
+        }
+      });
+      // Escape uses native cancel/close, including the close focus restoration.
+    </script>
+  </body>
+</html>

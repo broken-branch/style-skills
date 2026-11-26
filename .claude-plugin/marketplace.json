@@ -1,0 +1,96 @@
+{
+  "name": "style-skills",
+  "owner": {
+    "name": "style-skills contributors"
+  },
+  "metadata": {
+    "description": "Coding and house UI design guides as skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "house-style",
+      "source": "./plugins/house-style",
+      "description": "House coding and UI design style (used automatically)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "bash",
+      "source": "./plugins/bash",
+      "description": "Bash: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "cpp",
+      "source": "./plugins/cpp",
+      "description": "C++: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "css",
+      "source": "./plugins/css",
+      "description": "CSS: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "design",
+      "source": "./plugins/design",
+      "description": "House UI design: tokens, layout, and component behavior",
+      "version": "1.0.0"
+    },
+    {
+      "name": "go",
+      "source": "./plugins/go",
+      "description": "Go: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "html",
+      "source": "./plugins/html",
+      "description": "HTML: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "powershell",
+      "source": "./plugins/powershell",
+      "description": "PowerShell: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "python",
+      "source": "./plugins/python",
+      "description": "Python: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "react",
+      "source": "./plugins/react",
+      "description": "React: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "rust",
+      "source": "./plugins/rust",
+      "description": "Rust: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "sql",
+      "source": "./plugins/sql",
+      "description": "SQL: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "typescript",
+      "source": "./plugins/typescript",
+      "description": "TypeScript: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    },
+    {
+      "name": "vue",
+      "source": "./plugins/vue",
+      "description": "Vue: house style plus source guides (sources run only when named)",
+      "version": "1.0.0"
+    }
+  ]
+}

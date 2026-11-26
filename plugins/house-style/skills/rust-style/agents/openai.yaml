@@ -1,0 +1,5 @@
+interface:
+  display_name: "Rust style (house)"
+  short_description: "House style for Rust code and reviews"
+policy:
+  allow_implicit_invocation: true

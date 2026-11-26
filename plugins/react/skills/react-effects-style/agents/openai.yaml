@@ -1,0 +1,4 @@
+interface:
+  display_name: "React style: You Might Not Need an Effect"
+policy:
+  allow_implicit_invocation: false

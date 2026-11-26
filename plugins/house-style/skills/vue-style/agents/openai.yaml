@@ -1,0 +1,5 @@
+interface:
+  display_name: "Vue style (house)"
+  short_description: "House style for Vue code and reviews"
+policy:
+  allow_implicit_invocation: true

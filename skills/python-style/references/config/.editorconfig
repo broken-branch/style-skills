@@ -1,0 +1,29 @@
+# Copy this file to a consuming repository's root; this directory is a distribution location.
+# House defaults, using EditorConfig's supported properties. [EDITORCONFIG]
+
+# MUST stop lookup at the repository boundary. Why: parent settings should not leak in. [EDITORCONFIG]
+root = true
+
+[*]
+# PREFER UTF-8 without a BOM. Why: text stays portable across tools. [EDITORCONFIG]
+charset = utf-8
+# PREFER LF and a final newline. Why: consistent text files avoid platform-only diffs. [EDITORCONFIG]
+end_of_line = lf
+insert_final_newline = true
+# PREFER trimming trailing whitespace. Why: invisible changes add noise. [EDITORCONFIG]
+trim_trailing_whitespace = true
+
+# Match Prettier's two-space web baseline; line wrapping stays formatter-owned.
+[*.{ts,tsx,mts,cts,js,jsx,mjs,cjs,vue,json,jsonc,css,html,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Go and Make recipes require their tab-based conventions.
+[{*.go,Makefile,*.mk}]
+indent_style = tab
+
+# File-format requirements can override defaults in a later or nearer section. [EDITORCONFIG]
+
+[*.md]
+# PREFER leaving Markdown trailing whitespace to its formatter. Why: editor trimming can remove meaningful content. [EDITORCONFIG]
+trim_trailing_whitespace = false

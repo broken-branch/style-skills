@@ -1,0 +1,5 @@
+interface:
+  display_name: "HTML style (house)"
+  short_description: "House style for HTML code and reviews"
+policy:
+  allow_implicit_invocation: true

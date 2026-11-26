@@ -1,0 +1,21 @@
+# ShellCheck 0.11.0. Copy into the directory that owns the checked scripts.
+# Keep interpreter detection: a Bash override would hide a mistaken sh shebang.
+# Libraries without a shebang declare: # shellcheck shell=bash
+external-sources=true
+source-path=SCRIPTDIR
+extended-analysis=true
+
+# Explicit optional checks; default diagnostics remain enabled.
+enable=add-default-case
+enable=avoid-negated-conditions
+enable=avoid-nullary-conditions
+enable=check-unassigned-uppercase
+enable=deprecate-which
+enable=quote-safe-variables
+enable=require-double-brackets
+enable=useless-use-of-cat
+
+# require-variable-braces (SC2250) stays off: discretionary bracing follows
+# surrounding code; new files use "$var" unless braces are necessary.
+# SC2312 and SC2310/SC2311 stay off: explicit status handling is reviewed.
+# --check-sourced and --severity=style are CLI options, not rc directives.

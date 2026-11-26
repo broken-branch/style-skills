@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bash style (house)"
+  short_description: "House style for Bash code and reviews"
+policy:
+  allow_implicit_invocation: true

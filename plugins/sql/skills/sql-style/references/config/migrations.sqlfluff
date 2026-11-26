@@ -1,0 +1,18 @@
+# SQLFluff 4.5.0: additional migration-only pass, AFTER the base profile.
+# Use --ignore-local-config --config PATH; this is not a root replacement.
+[sqlfluff]
+dialect = postgres
+templater = raw
+rules = PG01,PG02
+encoding = utf-8
+large_file_skip_fail = True
+warn_unused_ignores = True
+fix_even_unparsable = False
+processes = 1
+use_rust_parser = False
+
+[sqlfluff:rules:postgres.excessive_locks]
+force_enable = True
+
+[sqlfluff:rules:postgres.not_valid_foreign_key]
+force_enable = True

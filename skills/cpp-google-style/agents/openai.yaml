@@ -1,0 +1,4 @@
+interface:
+  display_name: "C++ style: Google"
+policy:
+  allow_implicit_invocation: false

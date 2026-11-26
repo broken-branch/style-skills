@@ -1,0 +1,14 @@
+/* CUBE CSS: Composition and Utility [CUBE-CSS].
+   Original example: arrange arbitrary children and constrain reading width. */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 1.25rem;
+}
+
+.reading-width {
+  max-inline-size: 65ch;
+  margin-inline: auto;
+}

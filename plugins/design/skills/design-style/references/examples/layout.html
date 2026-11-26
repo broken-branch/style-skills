@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House content layout</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="examples.css" />
+  </head>
+  <body class="frame">
+    <!-- [source: mockup-37; house adaptation G03; house adaptation G04; house adaptation G06] -->
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="workspace">
+      <nav class="navigation" aria-label="Example pages">
+        <a href="layout.html" aria-current="page">Projects (current)</a>
+        <a href="controls.html">Control states</a>
+      </nav>
+      <main id="main" class="sheet" tabindex="-1">
+        <h1>Projects</h1>
+        <p>A compact content study with wrapping cards, a dark frame and labeled
+          ownership. It demonstrates reflow, not the full interactive board/detail system.</p>
+        <div class="groups">
+          <section aria-labelledby="planned">
+            <h2 id="planned">Planned</h2>
+            <ul class="cards">
+              <li class="card">
+                <h3><a href="#details">Prepare a release overview with a deliberately long title</a></h3>
+                <p>Keep all of the title available at narrow widths and enlarged text sizes.</p>
+                <span class="owner">Owner: Documentation</span>
+              </li>
+            </ul>
+          </section>
+          <section aria-labelledby="review">
+            <h2 id="review">In review</h2>
+            <ul class="cards">
+              <li class="card">
+                <h3><a href="#details">Review setup instructions</a></h3>
+                <p class="muted">Ready for a content review.</p>
+                <span class="status">Status: awaiting review</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <section id="details" class="details" aria-labelledby="detail-heading" tabindex="-1">
+          <h2 id="detail-heading">Project details</h2>
+          <p>This static destination uses normal document navigation. An interactive
+            side panel or modal must implement its separate focus contract.</p>
+          <p><a href="#main">Return to projects</a></p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

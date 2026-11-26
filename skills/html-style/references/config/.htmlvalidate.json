@@ -1,0 +1,98 @@
+{
+  "$schema": "https://html-validate.org/schemas/config.json",
+  "root": true,
+  "extends": [],
+  "elements": [
+    "html5",
+    {
+      "*": {
+        "attributes": {
+          "tabindex": { "enum": ["-1", "0"], "omit": false }
+        }
+      },
+      "html": {
+        "attributes": {
+          "lang": { "required": true, "omit": false, "enum": ["/\\S+/"] }
+        },
+        "requiredContent": ["head", "body"]
+      },
+      "head": { "requiredContent": ["title"] },
+      "img": { "attributes": { "alt": { "required": true } } }
+    }
+  ],
+  "rules": {
+    "area-alt": "error",
+    "aria-hidden-body": "error",
+    "aria-label-misuse": "error",
+    "attr-spacing": "error",
+    "attribute-allowed-values": "error",
+    "attribute-misuse": "error",
+    "autocomplete-password": "error",
+    "close-attr": "error",
+    "close-order": "error",
+    "deprecated": "error",
+    "doctype-html": "error",
+    "element-name": "error",
+    "element-permitted-content": "error",
+    "element-permitted-occurrences": "error",
+    "element-permitted-order": "error",
+    "element-permitted-parent": "error",
+    "element-required-ancestor": "error",
+    "element-required-attributes": "error",
+    "element-required-content": "error",
+    "empty-heading": "error",
+    "empty-title": "error",
+    "form-dup-name": [
+      "error",
+      { "shared": ["radio", "checkbox", "submit", "button", "reset"] }
+    ],
+    "heading-level": [
+      "error",
+      {
+        "allowMultipleH1": false,
+        "minInitialRank": "h1",
+        "sectioningRoots": []
+      }
+    ],
+    "hidden-focusable": "error",
+    "id-pattern": ["error", { "pattern": "/^[a-z][a-z0-9]*(-[a-z0-9]+)+$/" }],
+    "input-attributes": "error",
+    "input-missing-label": "error",
+    "map-dup-name": "error",
+    "map-id-name": "error",
+    "meta-refresh": "error",
+    "missing-doctype": "error",
+    "multiple-labeled-controls": "error",
+    "no-abstract-role": "error",
+    "no-autoplay": "error",
+    "no-conditional-comment": "error",
+    "no-deprecated-attr": "error",
+    "no-dup-attr": "error",
+    "no-dup-class": "error",
+    "no-dup-id": "error",
+    "no-implicit-button-type": "error",
+    "no-implicit-close": "error",
+    "no-implicit-input-type": "error",
+    "no-missing-references": "error",
+    "no-multiple-main": "error",
+    "no-raw-characters": "error",
+    "no-redundant-role": ["error", { "exclude": ["list"] }],
+    "no-unknown-elements": "error",
+    "prefer-native-element": "error",
+    "script-element": "error",
+    "script-type": "error",
+    "text-content": "error",
+    "unique-landmark": "error",
+    "unrecognized-char-ref": "error",
+    "valid-autocomplete": "error",
+    "valid-for": "error",
+    "valid-id": "error",
+    "void-content": "error",
+    "wcag/h30": "error",
+    "wcag/h32": "error",
+    "wcag/h36": "error",
+    "wcag/h37": "error",
+    "wcag/h67": "error",
+    "wcag/h71": "error"
+  }
+}

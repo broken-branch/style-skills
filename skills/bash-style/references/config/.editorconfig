@@ -1,0 +1,24 @@
+# shfmt 3.14.1. This directory contains only Bash shell sources.
+# Merge these sections after the shared EditorConfig defaults when adopting.
+# Restrict *.sh to actual Bash paths in a repository containing POSIX scripts.
+# Do not add parser/printer flags (including --simplify/--minify): they bypass EditorConfig options.
+
+[*.{sh,bash}]
+shell_variant = bash
+indent_style = space
+indent_size = 2
+binary_next_line = true
+switch_case_indent = true
+space_redirects = false
+function_next_line = false
+
+# shfmt-specific selector for Bash shebangs, including extensionless commands.
+# Ordinary EditorConfig plugins need explicit filename globs for such files.
+[[bash]]
+shell_variant = bash
+indent_style = space
+indent_size = 2
+binary_next_line = true
+switch_case_indent = true
+space_redirects = false
+function_next_line = false

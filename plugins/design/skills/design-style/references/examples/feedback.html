@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- Empty states and loading; Errors and feedback from components.md.
+     [source: house adaptation G06; house adaptation G08; house adaptation G10; house adaptation G11] [WCAG22] -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House feedback and empty states</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="examples.css" />
+  </head>
+  <body>
+    <main class="sheet">
+      <h1>Feedback and empty states</h1>
+      <p>Separate snapshots show how each situation explains the next step.
+        Setup opens the field example; clearing filters and retrying open the local
+        table example. No data is sent or fetched.</p>
+      <section aria-labelledby="situations-heading">
+        <h2 id="situations-heading">Empty states and loading</h2>
+        <div class="groups">
+          <section class="empty-state" data-situation="first-use" aria-labelledby="first-heading">
+            <h2 id="first-heading">No projects yet</h2>
+            <p class="muted">Projects collect work and its progress. Start by giving your first project a name.</p>
+            <a class="action-link" href="controls.html#project">Create project</a>
+          </section>
+          <section class="empty-state" data-situation="filtered-zero" aria-labelledby="filtered-heading">
+            <h2 id="filtered-heading">No matching projects</h2>
+            <div class="field">
+              <label for="query">Current filter</label>
+              <input id="query" value="Archived" readonly aria-describedby="filter-help" />
+              <p id="filter-help" class="muted">The query stays available. Clear the filter to see all projects.</p>
+            </div>
+            <a class="action-link" href="navigation-table.html">Clear filters</a>
+          </section>
+          <section class="empty-state" data-situation="no-permission" aria-labelledby="access-heading">
+            <h2 id="access-heading">Project access is limited</h2>
+            <p class="muted">You do not have permission to view this collection.</p>
+            <a href="#access-steps">Review access steps</a>
+          </section>
+          <section class="empty-state" data-situation="loading" aria-labelledby="loading-heading">
+            <h2 id="loading-heading">Projects</h2>
+            <p role="status">Loading projects…</p>
+            <p class="muted">The collection is being retrieved. Keep this view open.</p>
+            <div class="loading-placeholder" aria-hidden="true"></div>
+          </section>
+          <section class="empty-state" data-situation="failed-load" aria-labelledby="failed-heading">
+            <div class="notice notice-error">
+              <h2 id="failed-heading">Projects could not be loaded</h2>
+              <p>The last available view is still below. <a href="#saved-view">Review the saved view</a> or retry.</p>
+            </div>
+            <p id="saved-view">Last available view: 3 projects awaiting review.</p>
+            <a class="action-link" href="navigation-table.html">Try again</a>
+          </section>
+        </div>
+      </section>
+      <section aria-labelledby="banners-heading">
+        <h2 id="banners-heading">Feedback banners</h2>
+        <div class="feedback-stack">
+          <aside class="notice notice-success" aria-labelledby="success-heading">
+            <h2 id="success-heading">Success: changes saved</h2>
+            <p>Your project is ready. <a href="navigation-table.html">Review projects</a>.</p>
+          </aside>
+          <aside class="notice notice-caution" aria-labelledby="caution-heading">
+            <h2 id="caution-heading">Caution: setup is incomplete</h2>
+            <p>A project name is still needed. <a href="controls.html#project">Complete the name</a>.</p>
+          </aside>
+          <aside class="notice notice-warning" aria-labelledby="warning-heading">
+            <h2 id="warning-heading">Warning: review is pending</h2>
+            <p>Check the saved work before continuing. <a href="layout.html#review">Review the pending item</a>.</p>
+          </aside>
+          <aside class="notice notice-error" aria-labelledby="error-heading">
+            <h2 id="error-heading">Error: changes could not be saved</h2>
+            <p>Your draft is retained. <a href="controls.html#invalid-project">Review the field error</a>.</p>
+          </aside>
+        </div>
+        <p>These persistent examples do not announce themselves as new events.
+          In a live view, ordinary progress and success use a polite status;
+          urgent failures need one appropriate announcement.</p>
+      </section>
+      <section id="access-steps" aria-labelledby="access-steps-heading" tabindex="-1">
+        <h2 id="access-steps-heading">Access steps</h2>
+        <p>Ask a collection administrator for access, including the collection name
+          and the work you need to do. Your current access remains unchanged.</p>
+      </section>
+      <p><a href="navigation-table.html">View navigation and table example</a></p>
+    </main>
+  </body>
+</html>

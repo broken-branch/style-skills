@@ -1,0 +1,25 @@
+/* [CUBE-CSS] composition separate from decoration;
+   [WEBDEV-CSS] intrinsic wrapping and logical spacing. */
+:root {
+  --demo-ink: #222;
+  --demo-paper: #fff;
+  --demo-edge: #666;
+  --demo-hover: #eee;
+  --demo-pressed: #ddd;
+  --demo-gap: 0.75rem;
+  --demo-radius: 0.25rem;
+}
+.demo-panel {
+  color: var(--demo-ink);
+  background: var(--demo-paper);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--demo-gap);
+  align-items: center;
+}

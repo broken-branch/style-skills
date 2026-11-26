@@ -1,0 +1,4 @@
+interface:
+  display_name: "Go style: Go Code Review Comments"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,24 @@
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": ["*.css"],
+      "options": { "singleQuote": false }
+    },
+    {
+      "files": ["*.html"],
+      "options": {
+        "htmlWhitespaceSensitivity": "css",
+        "singleAttributePerLine": false,
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}

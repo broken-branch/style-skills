@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML style: Google HTML/CSS Style Guide"
+policy:
+  allow_implicit_invocation: false

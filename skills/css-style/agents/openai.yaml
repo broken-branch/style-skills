@@ -1,0 +1,5 @@
+interface:
+  display_name: "CSS style (house)"
+  short_description: "House style for CSS code and reviews"
+policy:
+  allow_implicit_invocation: true

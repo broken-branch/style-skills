@@ -1,0 +1,293 @@
+# House Go policy. Copy to a consuming module's root as .golangci.yml.
+# Pin golangci-lint 2.15.0; the guide documents every enabled diagnostic ID.
+# No run.go override: analyzers must honor each module's go.mod language version.
+version: "2"
+
+run:
+  timeout: 5m
+  relative-path-mode: gomod
+  tests: true
+  modules-download-mode: readonly
+
+linters:
+  default: none
+  enable:
+    - asasalint
+    - bidichk
+    - bodyclose
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - durationcheck
+    - errcheck
+    - errname
+    - errorlint
+    - gosec
+    - govet
+    - ineffassign
+    - makezero
+    - musttag
+    - nilerr
+    - nilnesserr
+    - noctx
+    - nolintlint
+    - predeclared
+    - recvcheck
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - testableexamples
+    - thelper
+    - tparallel
+    - unused
+  settings:
+    errcheck:
+      check-type-assertions: true
+      check-blank: false
+      disable-default-exclusions: false
+    errorlint:
+      # Hiding an implementation error's identity with %v can be intentional.
+      errorf: false
+      asserts: true
+      comparison: true
+    gosec:
+      # Focused Go API checks; general security obligations remain in shared.md.
+      includes:
+        - G103
+        - G106
+        - G107
+        - G108
+        - G110
+        - G112
+        - G114
+        - G115
+        - G201
+        - G202
+        - G203
+        - G204
+        - G304
+        - G305
+        - G401
+        - G402
+        - G403
+        - G404
+        - G405
+        - G406
+        - G407
+        - G501
+        - G502
+        - G503
+        - G504
+        - G505
+      severity: low
+      confidence: low
+    govet:
+      disable-all: true
+      enable:
+        - appends
+        - asmdecl
+        - assign
+        - atomic
+        - atomicalign
+        - bools
+        - buildtag
+        - cgocall
+        - composites
+        - copylocks
+        - deepequalerrors
+        - defers
+        - directive
+        - framepointer
+        - hostport
+        - httpmux
+        - httpresponse
+        - ifaceassert
+        - lostcancel
+        - nilfunc
+        - nilness
+        - printf
+        - reflectvaluecompare
+        - shift
+        - sigchanyzer
+        - slog
+        - sortslice
+        - stdmethods
+        - stdversion
+        - stringintconv
+        - structtag
+        - testinggoroutine
+        - tests
+        - timeformat
+        - unmarshal
+        - unreachable
+        - unsafeptr
+        - unusedresult
+        - unusedwrite
+        - waitgroup
+        - errorsas
+    nolintlint:
+      allow-unused: false
+      require-explanation: true
+      require-specific: true
+    predeclared:
+      qualified-name: true
+    revive:
+      enable-default-rules: false
+      enable-all-rules: false
+      severity: warning
+      confidence: 0.8
+      rules:
+        - name: blank-imports
+        - name: context-as-argument
+        - name: context-keys-type
+        - name: deep-exit
+        - name: dot-imports
+        - name: error-return
+        - name: error-strings
+        - name: exported
+          arguments:
+            - check-private-receivers
+            - check-public-interface
+        - name: indent-error-flow
+        - name: package-comments
+        - name: package-naming
+          arguments:
+            - skip-collision-with-common-std: true
+        - name: receiver-naming
+        - name: redundant-import-alias
+        - name: superfluous-else
+        - name: use-any
+        - name: var-naming
+    staticcheck:
+      # Pinned SA diagnostics; the guide lists every ID.
+      checks:
+        - SA1000
+        - SA1001
+        - SA1002
+        - SA1003
+        - SA1004
+        - SA1005
+        - SA1006
+        - SA1007
+        - SA1008
+        - SA1010
+        - SA1011
+        - SA1012
+        - SA1013
+        - SA1014
+        - SA1015
+        - SA1016
+        - SA1017
+        - SA1018
+        - SA1019
+        - SA1020
+        - SA1021
+        - SA1023
+        - SA1024
+        - SA1025
+        - SA1026
+        - SA1027
+        - SA1028
+        - SA1029
+        - SA1030
+        - SA1031
+        - SA1032
+        - SA2000
+        - SA2001
+        - SA2002
+        - SA2003
+        - SA3000
+        - SA3001
+        - SA4000
+        - SA4001
+        - SA4003
+        - SA4004
+        - SA4005
+        - SA4006
+        - SA4008
+        - SA4009
+        - SA4010
+        - SA4011
+        - SA4012
+        - SA4013
+        - SA4014
+        - SA4015
+        - SA4016
+        - SA4017
+        - SA4018
+        - SA4019
+        - SA4020
+        - SA4021
+        - SA4022
+        - SA4023
+        - SA4024
+        - SA4025
+        - SA4026
+        - SA4027
+        - SA4028
+        - SA4029
+        - SA4030
+        - SA4031
+        - SA4032
+        - SA5000
+        - SA5001
+        - SA5002
+        - SA5003
+        - SA5004
+        - SA5005
+        - SA5007
+        - SA5008
+        - SA5009
+        - SA5010
+        - SA5011
+        - SA5012
+        - SA6000
+        - SA6001
+        - SA6002
+        - SA6003
+        - SA6005
+        - SA6006
+        - SA9001
+        - SA9002
+        - SA9003
+        - SA9004
+        - SA9005
+        - SA9006
+        - SA9007
+        - SA9008
+        - SA9009
+    thelper:
+      test:
+        first: true
+        name: false
+        begin: true
+      benchmark:
+        first: true
+        name: false
+        begin: true
+      tb:
+        first: true
+        name: false
+        begin: true
+      fuzz:
+        first: true
+        name: false
+        begin: true
+  exclusions:
+    generated: strict
+    presets: []
+    paths: []
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: strict
+    paths: []
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  uniq-by-line: false

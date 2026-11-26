@@ -1,0 +1,15 @@
+PEP 8 public-domain dedication
+
+License identifier: LicenseRef-Public-Domain-PEP
+
+PEP 8 — Style Guide for Python Code
+Authors: Guido van Rossum, Barry Warsaw, Alyssa Coghlan
+Source: https://peps.python.org/pep-0008/
+Copyright notice: https://peps.python.org/pep-0008/#copyright
+
+This document has been placed in the public domain.
+
+The independently restated skill text is placed in the public domain or under CC0 1.0 Universal, whichever is more permissive.
+https://creativecommons.org/publicdomain/zero/1.0/
+Changes: rules restated, shortened, and grouped by topic; examples and source-local requirements omitted.
+The LicenseRef-Public-Domain-PEP identifier records the original document's dedication; CC0-1.0 applies to this skill's independently restated text.

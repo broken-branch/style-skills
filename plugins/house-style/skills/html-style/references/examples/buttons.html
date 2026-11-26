@@ -1,0 +1,47 @@
+<!-- [LEARN-HTML] document structure; [WCAG22] native controls and labels.
+     Neutral tokens are declared first in the adjacent CSS. Open this file locally. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Button states</title>
+    <link rel="stylesheet" href="controls.css" />
+  </head>
+  <body class="demo-panel">
+    <main>
+      <h1>Button states</h1>
+      <p>
+        Hover, press or Tab to a button. The named previews do not claim real
+        focus.
+      </p>
+      <div class="demo-row">
+        <button class="demo-button" type="button">Default</button>
+        <button class="demo-button" type="button" data-preview="hover">
+          Hover
+        </button>
+        <button class="demo-button" type="button" data-preview="focus-visible">
+          Focus-visible
+        </button>
+        <button class="demo-button" type="button" data-preview="active">
+          Active
+        </button>
+        <button class="demo-button" type="button" disabled>Disabled</button>
+        <button class="demo-button" type="button" disabled aria-busy="true">
+          Loading…
+        </button>
+      </div>
+      <p role="status" data-notice></p>
+    </main>
+    <script>
+      const notice = document.querySelector('[data-notice]');
+      let count = 0;
+      document.querySelectorAll('.demo-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          count += 1;
+          notice.textContent = `Activated ${count} times.`;
+        });
+      });
+    </script>
+  </body>
+</html>

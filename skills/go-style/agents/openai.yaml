@@ -1,0 +1,5 @@
+interface:
+  display_name: "Go style (house)"
+  short_description: "House style for Go code and reviews"
+policy:
+  allow_implicit_invocation: true

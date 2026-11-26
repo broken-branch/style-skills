@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "defaultSeverity": "error",
+  "reportDescriptionlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "reportUnscopedDisables": true,
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "comment-whitespace-inside": null,
+    "custom-property-empty-line-before": null,
+    "declaration-block-single-line-max-declarations": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "selector-id-pattern": null,
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+    "max-nesting-depth": 2,
+    "declaration-no-important": true,
+    "function-url-no-scheme-relative": true,
+    "function-url-scheme-allowed-list": ["https", "data", "blob"]
+  }
+}

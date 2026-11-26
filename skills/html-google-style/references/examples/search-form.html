@@ -1,0 +1,29 @@
+<!-- Google HTML: native controls, necessary hyphenated IDs, separation of
+     structure from styling, and two-space indentation [GOOGLE-HTMLCSS]. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search the reading catalog</title>
+  </head>
+  <body>
+    <main>
+      <h1>Search the reading catalog</h1>
+      <form action="/search" method="get">
+        <p>
+          <label for="search-query">Topic</label>
+          <input id="search-query" name="q" type="search" required>
+        </p>
+        <p>
+          <label for="search-language">Language</label>
+          <select id="search-language" name="language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </p>
+        <button type="submit">Search</button>
+      </form>
+    </main>
+  </body>
+</html>

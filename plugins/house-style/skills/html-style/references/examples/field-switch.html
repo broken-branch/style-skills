@@ -1,0 +1,64 @@
+<!-- [LEARN-HTML] visible labels and explicit types; [WCAG22] associated, repairable errors and switch semantics.
+     Neutral tokens are declared first in the adjacent CSS. Open this file locally. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Display preferences</title>
+    <link rel="stylesheet" href="controls.css" />
+  </head>
+  <body class="demo-panel">
+    <main>
+      <h1>Display preferences</h1>
+      <form data-preferences novalidate>
+        <div class="demo-field">
+          <label for="item-title">Item title (required)</label>
+          <input
+            class="demo-input"
+            id="item-title"
+            data-title
+            name="title"
+            type="text"
+            required
+            aria-describedby="title-error"
+          />
+          <p class="demo-error" id="title-error" data-error></p>
+        </div>
+        <label class="demo-switch"
+          ><input type="checkbox" role="switch" name="compact" /> Compact
+          layout</label
+        >
+        <button class="demo-button" type="submit">Preview preferences</button>
+      </form>
+      <p role="status" data-notice></p>
+    </main>
+    <script>
+      const form = document.querySelector('[data-preferences]');
+      const title = form.querySelector('[data-title]');
+      const error = form.querySelector('[data-error]');
+      const notice = document.querySelector('[data-notice]');
+      let submitted = false;
+      function validateTitle() {
+        const invalid = submitted && title.value.trim() === '';
+        title.setAttribute('aria-invalid', String(invalid));
+        error.textContent = invalid ? 'Error: enter an item title.' : '';
+        return !invalid;
+      }
+      title.addEventListener('input', () => {
+        validateTitle();
+        notice.textContent = '';
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        submitted = true;
+        if (!validateTitle()) {
+          notice.textContent = 'Preferences need a title.';
+          title.focus();
+          return;
+        }
+        notice.textContent = 'Preferences previewed. Nothing was saved.';
+      });
+    </script>
+  </body>
+</html>

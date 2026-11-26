@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bash style: Omarchy"
+policy:
+  allow_implicit_invocation: false

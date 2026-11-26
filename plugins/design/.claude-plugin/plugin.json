@@ -1,0 +1,8 @@
+{
+  "name": "design",
+  "description": "House UI design: tokens, layout, and component behavior",
+  "version": "1.0.0",
+  "author": {
+    "name": "style-skills contributors"
+  }
+}

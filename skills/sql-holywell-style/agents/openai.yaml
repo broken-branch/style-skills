@@ -1,0 +1,4 @@
+interface:
+  display_name: "SQL style: Simon Holywell"
+policy:
+  allow_implicit_invocation: false

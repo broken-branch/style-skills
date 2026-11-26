@@ -1,0 +1,8 @@
+# Rust 1.99.1 / rustfmt 1.10.0-stable. Copy to the consuming repository root.
+# Mechanical layout follows rustfmt's stable defaults for the 2024 style edition.
+edition = "2024"
+style_edition = "2024"
+newline_style = "Unix"
+
+# Google Rust uses 100 columns; its other formatter opt-ins require nightly.
+max_width = 100

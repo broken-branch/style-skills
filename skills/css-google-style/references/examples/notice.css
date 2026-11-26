@@ -1,0 +1,15 @@
+/* Google CSS: class selectors, declaration order, shorthand, unitless zero,
+   and short hexadecimal colors [GOOGLE-CSS]. */
+
+.notice {
+  background: #fff;
+  border: 1px solid #999;
+  color: #222;
+  margin: 0;
+  padding: 1rem;
+}
+
+.notice-title {
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}

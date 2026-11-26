@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python style: Google"
+policy:
+  allow_implicit_invocation: false

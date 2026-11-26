@@ -1,0 +1,4 @@
+interface:
+  display_name: "PowerShell style: Microsoft cmdlets"
+policy:
+  allow_implicit_invocation: false

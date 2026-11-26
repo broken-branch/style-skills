@@ -1,0 +1,4 @@
+interface:
+  display_name: "C++ style: Chromium"
+policy:
+  allow_implicit_invocation: false

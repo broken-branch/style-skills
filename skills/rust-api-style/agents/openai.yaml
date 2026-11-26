@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rust style: Rust API Guidelines"
+policy:
+  allow_implicit_invocation: false

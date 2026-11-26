@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- Navigation, layout and detail peek (navigation/compact rail); Tables from components.md.
+     [source: mockup square-c; mockup tall-c; house adaptation G04; house adaptation G08; house adaptation G09; house adaptation G10] [WCAG22] -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House navigation and table</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="examples.css" />
+  </head>
+  <body class="frame">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="workspace table-workspace">
+      <nav class="navigation rail-navigation" aria-label="Example pages">
+        <a href="navigation-table.html" aria-current="page" aria-label="Project table (current)">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M10 9v12" /></svg>
+          <span class="nav-label">Project table (current)</span>
+        </a>
+        <a href="layout.html" aria-label="Project board">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="18" rx="2" /><rect x="14" y="3" width="7" height="12" rx="2" /></svg>
+          <span class="nav-label">Project board</span>
+        </a>
+        <a href="feedback.html" aria-label="Feedback states">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v6M12 16v1" /></svg>
+          <span class="nav-label">Feedback states</span>
+        </a>
+        <a href="controls.html" aria-label="Control states">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3" /><path d="M8 12h8" /></svg>
+          <span class="nav-label">Control states</span>
+        </a>
+      </nav>
+      <main id="main" class="sheet" tabindex="-1">
+        <h1>Projects</h1>
+        <p>Sort by project or open tasks. The table keeps every column; at narrow
+          widths, Tab to its named region and use Left and Right to scroll.
+          The navigation becomes a compact rail in a short, medium-width window.</p>
+        <p id="sort-status" role="status">3 projects, sorted by project, ascending.</p>
+        <div class="table-scroll" role="region" aria-labelledby="project-caption" tabindex="0">
+          <table>
+            <caption id="project-caption">Projects awaiting review</caption>
+            <thead>
+              <tr>
+                <th scope="col" aria-sort="ascending"><button class="sort-button" type="button" data-column="0">Project <span class="sort-marker" aria-hidden="true">↑</span></button></th>
+                <th scope="col">Status</th>
+                <th scope="col" class="numeric"><button class="sort-button" type="button" data-column="2">Open tasks <span class="sort-marker" aria-hidden="true">↕</span></button></th>
+                <th scope="col">Next step</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Content review</th><td>In review</td><td class="numeric">8</td><td>Check the release overview and confirm the next revision.</td></tr>
+              <tr><th scope="row">Release notes</th><td>In review</td><td class="numeric">12</td><td>Review the draft for completeness.</td></tr>
+              <tr><th scope="row">Setup guide</th><td>In review</td><td class="numeric">3</td><td>Confirm the instructions and record any missing steps.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="feedback.html">See loading, empty and failed views</a></p>
+      </main>
+    </div>
+    <script>
+      // Native buttons provide Enter/Space activation; keep focus on the sorter.
+      const table = document.querySelector('table');
+      const status = document.querySelector('#sort-status');
+      // A partly visible sorter can stay clipped after Tab; reveal it and its ring.
+      table.addEventListener('focusin', (event) => event.target.scrollIntoView({ block: 'nearest', inline: 'nearest' }));
+      for (const button of table.querySelectorAll('[data-column]')) {
+        button.addEventListener('click', () => {
+          const header = button.closest('th');
+          const direction = header.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
+          const column = Number(button.dataset.column);
+          const rows = Array.from(table.tBodies[0].rows);
+          rows.sort((first, second) => {
+            const a = first.cells[column].textContent.trim();
+            const b = second.cells[column].textContent.trim();
+            const order = column === 2 ? Number(a) - Number(b) : a.localeCompare(b, 'en');
+            return direction === 'ascending' ? order : -order;
+          });
+          for (const th of table.querySelectorAll('thead th')) th.removeAttribute('aria-sort');
+          for (const marker of table.querySelectorAll('.sort-marker')) marker.textContent = '↕';
+          header.setAttribute('aria-sort', direction);
+          button.querySelector('.sort-marker').textContent = direction === 'ascending' ? '↑' : '↓';
+          table.tBodies[0].append(...rows);
+          status.textContent = `${rows.length} projects, sorted by ${column === 2 ? 'open tasks' : 'project'}, ${direction}.`;
+        });
+      }
+    </script>
+  </body>
+</html>

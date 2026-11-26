@@ -1,0 +1,78 @@
+# Merge this fragment into a package's Cargo.toml; it is not a standalone manifest.
+# Baseline: Rust 1.99.1 / Clippy 0.1.99. No nightly lints.
+# For a workspace, rename [lints.*] to [workspace.lints.*] in the root,
+# then put [lints] workspace = true in EACH package manifest (including root).
+# Cargo cannot combine inherited lints and package-local lint entries.
+# Copy the companion rust-toolchain.toml, clippy.toml, and rustfmt.toml to the repository root.
+
+[lints.rust]
+elided_lifetimes_in_paths = "warn"
+missing_debug_implementations = "warn"
+missing_docs = "warn"
+nonstandard_style = { level = "warn", priority = -1 }
+redundant_lifetimes = "warn"
+unfulfilled_lint_expectations = "deny"
+unsafe_code = "deny"
+unsafe_op_in_unsafe_fn = "deny"
+unused_lifetimes = "warn"
+unused_must_use = "deny"
+
+[lints.clippy]
+# Preserve correctness errors while allowing individual policy overrides.
+all = { level = "warn", priority = -2 }
+correctness = { level = "deny", priority = -1 }
+
+# Selected checks, not entire pedantic/nursery/restriction/cargo groups.
+allow_attributes = "warn"
+allow_attributes_without_reason = "warn"
+cast_lossless = "warn"
+cast_possible_truncation = "warn"
+cast_possible_wrap = "warn"
+cast_precision_loss = "warn"
+cast_sign_loss = "warn"
+checked_conversions = "warn"
+clone_on_ref_ptr = "warn"
+dbg_macro = "deny"
+doc_markdown = "warn"
+enum_glob_use = "warn"
+fallible_impl_from = "warn"
+macro_use_imports = "warn"
+map_err_ignore = "warn"
+missing_errors_doc = "warn"
+missing_panics_doc = "warn"
+mod_module_files = "warn"
+negative_feature_names = "warn"
+pub_without_shorthand = "warn"
+redundant_feature_names = "warn"
+should_panic_without_expect = "warn"
+todo = "deny"
+undocumented_unsafe_blocks = "deny"
+unimplemented = "deny"
+unnecessary_safety_doc = "warn"
+unused_result_ok = "deny"
+unwrap_used = "warn"
+wildcard_imports = "warn"
+
+# Intentional conflict choices; these optional restrictions remain disabled.
+error_impl_error = "allow"
+expect_used = "allow"
+# Google permits fixed API shapes and useful generic library inputs.
+exhaustive_enums = "allow"
+exhaustive_structs = "allow"
+impl_trait_in_params = "allow"
+implicit_return = "allow"
+inline_trait_bounds = "allow"
+literal_string_with_formatting_args = "allow"
+missing_assert_message = "allow"
+missing_trait_methods = "allow"
+panic = "allow"
+pub_use = "allow"
+pub_with_shorthand = "allow"
+question_mark_used = "allow"
+self_named_module_files = "allow"
+semicolon_inside_block = "allow"
+semicolon_outside_block = "allow"
+separated_literal_suffix = "allow"
+single_char_lifetime_names = "allow"
+unseparated_literal_suffix = "allow"
+unwrap_in_result = "allow"

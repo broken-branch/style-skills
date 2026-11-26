@@ -1,0 +1,4 @@
+interface:
+  display_name: "CSS style: MDN"
+policy:
+  allow_implicit_invocation: false

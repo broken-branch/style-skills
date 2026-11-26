@@ -1,0 +1,5 @@
+interface:
+  display_name: "PowerShell style (house)"
+  short_description: "House style for PowerShell code and reviews"
+policy:
+  allow_implicit_invocation: true

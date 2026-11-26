@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rust style: Rust Style Guide"
+policy:
+  allow_implicit_invocation: false

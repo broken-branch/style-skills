@@ -1,0 +1,18 @@
+/* MDN CSS: custom properties first, related declaration groups,
+   modern color functions, and double-quoted strings [MDN-CSS]. */
+
+.panel {
+  --panel-gap: 1rem;
+
+  padding: var(--panel-gap);
+  border: 1px solid #5b6070;
+
+  color: rgb(30 40 50);
+  background-color: rgb(246 248 250);
+  font-family: "Study Serif", serif;
+}
+
+.panel::before {
+  content: "Note: ";
+  font-weight: bold;
+}

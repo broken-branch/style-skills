@@ -1,0 +1,4 @@
+interface:
+  display_name: "SQL style: GitLab"
+policy:
+  allow_implicit_invocation: false

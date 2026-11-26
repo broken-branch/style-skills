@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python style: PEP 8"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,8 @@
+{
+  "name": "bash",
+  "description": "Bash: house style plus source guides (sources run only when named)",
+  "version": "1.0.0",
+  "author": {
+    "name": "style-skills contributors"
+  }
+}

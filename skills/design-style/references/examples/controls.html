@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House control states</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="examples.css" />
+  </head>
+  <body>
+    <!-- [source: house adaptation G01; house adaptation G08; house adaptation G10] [WCAG22] -->
+    <main class="sheet">
+      <h1>Control states</h1>
+      <p>Static visual examples. Hover, press or Tab to controls. Preview labels
+        identify forced states; the examples do not submit data or start work.
+        The system theme is used unless the root has data-theme="light" or "dark".</p>
+      <section aria-labelledby="actions-heading">
+        <h2 id="actions-heading">Action states</h2>
+        <div class="actions">
+          <button type="button">Default</button>
+          <button type="button" data-preview="hover">Hover preview</button>
+          <button type="button" data-preview="focus-visible">Focus-visible preview</button>
+          <button type="button" data-preview="active">Active preview</button>
+          <button type="button" disabled>Disabled</button>
+          <button type="button" aria-disabled="true" aria-busy="true" aria-describedby="progress">Save changes</button>
+        </div>
+        <p id="progress" role="status">Loading preview: saving changes…</p>
+        <p>In an application, the busy button keeps focus and its action name;
+          an activation guard must stop duplicate clicks and keyboard activation.</p>
+      </section>
+      <section aria-labelledby="fields-heading">
+        <h2 id="fields-heading">Fields and error recovery</h2>
+        <div class="field">
+          <label for="project">Project name</label>
+          <input id="project" name="project" placeholder="For example, release notes" aria-describedby="project-help" />
+          <p id="project-help">Use a short, recognizable name.</p>
+        </div>
+        <div class="field">
+          <label for="invalid-project">Project name — error preview</label>
+          <input id="invalid-project" name="invalid-project" value="" readonly aria-invalid="true" aria-describedby="project-error" />
+          <p id="project-error" class="error">Enter a project name. This read-only field shows a validation result.</p>
+        </div>
+        <div class="field">
+          <label for="disabled-project">Unavailable field</label>
+          <input id="disabled-project" value="Example project" disabled aria-describedby="disabled-help" />
+          <p id="disabled-help">This preview shows a field that cannot be changed.</p>
+        </div>
+      </section>
+      <aside class="notice" aria-labelledby="notice-heading">
+        <h2 id="notice-heading">Changes could not be saved</h2>
+        <p>Your draft is still available. <a href="#project">Review the name</a> and try again.</p>
+      </aside>
+      <p><a href="layout.html">View the responsive content example</a></p>
+    </main>
+  </body>
+</html>

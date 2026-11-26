@@ -1,0 +1,5 @@
+interface:
+  display_name: "TypeScript style (house)"
+  short_description: "House style for TypeScript code and reviews"
+policy:
+  allow_implicit_invocation: true

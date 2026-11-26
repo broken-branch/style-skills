@@ -1,0 +1,115 @@
+/* [CUBE-CSS] neutral tokens; [GOOGLE-CSS] class-based selectors;
+   [WEBDEV-CSS] wrapping, logical spacing and forced-color focus;
+   [WCAG22] noncolor state cues. No motion or external assets. */
+:root {
+  --demo-ink: #222;
+  --demo-paper: #fff;
+  --demo-edge: #666;
+  --demo-hover: #eee;
+  --demo-pressed: #ddd;
+  --demo-gap: 0.75rem;
+  --demo-radius: 0.25rem;
+}
+.demo-panel {
+  color: var(--demo-ink);
+  background: var(--demo-paper);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--demo-gap);
+  align-items: center;
+}
+.demo-dialog {
+  box-sizing: border-box;
+  max-inline-size: min(28rem, calc(100% - 2rem));
+  max-block-size: calc(100% - 2rem);
+  overflow: auto;
+  padding: 1.5rem;
+  border: 1px solid var(--demo-edge);
+  border-radius: var(--demo-radius);
+  color: var(--demo-ink);
+  background: var(--demo-paper);
+}
+.demo-dialog::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+.demo-button {
+  min-block-size: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--demo-edge);
+  border-radius: var(--demo-radius);
+  color: var(--demo-ink);
+  background: var(--demo-paper);
+  font: inherit;
+  cursor: pointer;
+}
+.demo-button:where(:hover, [data-preview="hover"]):not(:disabled) {
+  background: var(--demo-hover);
+}
+.demo-button:where(:focus-visible, [data-preview="focus-visible"]) {
+  outline: 2px solid currentcolor;
+  outline-offset: 3px;
+}
+.demo-button:where(:active, [data-preview="active"]):not(:disabled) {
+  background: var(--demo-pressed);
+  border-color: currentcolor;
+}
+.demo-button:disabled {
+  cursor: not-allowed;
+  border-style: dashed;
+}
+.demo-button[aria-busy="true"] {
+  cursor: progress;
+}
+@media (forced-colors: active) {
+  .demo-button:where(:focus-visible, [data-preview="focus-visible"]) {
+    outline-color: Highlight;
+  }
+}
+.demo-field {
+  display: grid;
+  gap: var(--demo-gap);
+}
+.demo-input {
+  box-sizing: border-box;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 2.75rem;
+  padding: 0.5rem;
+  color: var(--demo-ink);
+  background: var(--demo-paper);
+  border: 1px solid var(--demo-edge);
+  border-radius: var(--demo-radius);
+  font: inherit;
+}
+.demo-input[aria-invalid="true"] {
+  border-width: 2px;
+}
+.demo-error {
+  font-weight: 700;
+}
+.demo-switch {
+  display: flex;
+  align-items: center;
+  gap: var(--demo-gap);
+  min-block-size: 2.75rem;
+}
+.demo-switch input {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  accent-color: var(--demo-ink);
+}
+:where(.demo-input, .demo-switch input):focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  :where(.demo-input, .demo-switch input):focus-visible {
+    outline-color: Highlight;
+  }
+}

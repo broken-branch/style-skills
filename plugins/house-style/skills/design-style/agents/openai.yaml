@@ -1,0 +1,5 @@
+interface:
+  display_name: "Design style (house)"
+  short_description: "House UI tokens, layout, states, and keyboard behavior"
+policy:
+  allow_implicit_invocation: true

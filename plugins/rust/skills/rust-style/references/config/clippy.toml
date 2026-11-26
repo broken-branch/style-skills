@@ -1,0 +1,8 @@
+# Companion to Cargo.lints.toml; copy to the consuming repository root.
+# Test failure is the intended signal for unwrap in #[test] / #[cfg(test)] code.
+allow-unwrap-in-tests = true
+allow-unwrap-in-consts = false
+# Enforce acronym spelling in compound names as well as all-capital names.
+upper-case-acronyms-aggressive = true
+# Keep compatibility-sensitive public names covered by applicable style lints.
+avoid-breaking-exported-api = false

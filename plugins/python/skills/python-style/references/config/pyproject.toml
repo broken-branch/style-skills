@@ -1,0 +1,99 @@
+# Distributable tool blocks; merge into the consuming project's pyproject.toml.
+# Baseline: Python 3.12+. Tool pins: Ruff 0.17.3 and mypy 2.4.1.
+# This is not a package manifest. No dependency installation is implied.
+[tool.ruff]
+required-version = "==0.17.3"
+target-version = "py312"
+line-length = 88
+indent-width = 4
+preview = false
+unsafe-fixes = false
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+
+[tool.ruff.lint]
+# Exact IDs deliberately replace Ruff's evolving default profile.
+# Formatter-conflicting checks, preview rules, and blanket ALL are not selected.
+select = [
+    # Builtin shadowing and import/name resolution.
+    "A001", "A002", "A004", "A005", "A006",
+    "F401", "F402", "F403", "F404", "F405", "F406", "F407",
+    "F501", "F502", "F503", "F504", "F505", "F506", "F507", "F508", "F509",
+    "F521", "F522", "F523", "F524", "F525", "F541",
+    "F601", "F602", "F621", "F622", "F631", "F632", "F633", "F634",
+    "F701", "F702", "F704", "F706", "F707", "F722",
+    "F811", "F821", "F822", "F823", "F841", "F842", "F901",
+    "E401", "E402", "I001", "TID252",
+    # Naming and semantic comparisons.
+    "N801", "N802", "N803", "N804", "N805", "N806", "N807",
+    "N811", "N812", "N813", "N814", "N815", "N816", "N817", "N818", "N999",
+    "E711", "E712", "E713", "E714", "E721", "E722", "E731",
+    "E741", "E742", "E743",
+    # Defaults, iteration, exception handling, and other Python traps.
+    "B002", "B003", "B004", "B005", "B006", "B007", "B008",
+    "B011", "B012", "B013", "B014", "B015", "B016", "B017", "B018", "B019",
+    "B020", "B021", "B022", "B023", "B025", "B026", "B028", "B029",
+    "B030", "B031", "B032", "B033", "B034", "B035", "B039", "B904", "B905",
+    "BLE001", "SIM115", "TRY002", "TRY004", "TRY201",
+    "RUF006", "RUF008", "RUF009", "RUF012", "RUF013", "RUF018", "RUF024",
+    "RUF032",
+    # Common blocking APIs inside async functions.
+    "ASYNC210", "ASYNC212", "ASYNC220", "ASYNC221", "ASYNC222",
+    "ASYNC230", "ASYNC240", "ASYNC250", "ASYNC251",
+    # Modern types; type checking itself belongs to mypy.
+    "UP006", "UP007", "UP017", "UP019", "UP035", "UP040", "UP045",
+    # Timezone-aware instants; including deprecated UTC constructors.
+    "DTZ001", "DTZ002", "DTZ003", "DTZ004", "DTZ005", "DTZ006", "DTZ007",
+    # Google sections with PEP 257 summaries; no formatter-conflicting IDs.
+    "D100", "D101", "D102", "D103", "D104", "D106", "D107",
+    "D200", "D201", "D202", "D205", "D207", "D208", "D209", "D210",
+    "D211", "D212", "D214", "D301", "D402", "D403", "D405",
+    "D410", "D411", "D412", "D414", "D416", "D417", "D418", "D419",
+    # Lazy logging, selected security APIs, and useful suppressions/TODOs.
+    # S101/S311 stay off: assertion intent and security randomness need review.
+    "G001", "G002", "G003", "G004", "G010", "G101", "G201", "G202",
+    "S102", "S110", "S112", "S301", "S302", "S306", "S307",
+    "S323", "S501", "S506", "S602", "S604", "S605", "S608",
+    "PLW1510", "PGH003", "PGH004", "RUF100", "TD003",
+]
+# Fully qualified selectors override the Google convention's exclusions.
+extend-select = ["D400", "D401"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Only test-file docstring presence checks are exempt. Types and other lints stay on.
+# Scope by test filename, not every helper or fixture in a tests/ directory.
+"test_*.py" = ["D100", "D101", "D102", "D103", "D104", "D106", "D107"]
+"*_test.py" = ["D100", "D101", "D102", "D103", "D104", "D106", "D107"]
+# Stubs describe types; public API documentation lives in the implementation.
+"*.pyi" = ["D100", "D101", "D102", "D103", "D104", "D106", "D107"]
+
+[tool.mypy]
+# Pin mypy==2.4.1 in the consuming project's development tool environment.
+python_version = "3.12"
+strict = true
+strict_optional = true
+implicit_optional = false
+strict_bytes = true
+disallow_any_unimported = true
+ignore_missing_imports = false
+follow_imports = "normal"
+warn_unreachable = true
+warn_unused_configs = true
+enable_error_code = [
+    "ignore-without-code",
+    "unused-awaitable",
+    "explicit-override",
+]
+hide_error_codes = false
+pretty = true
