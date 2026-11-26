@@ -8,7 +8,7 @@ The collection has 14 house skills that agents can select automatically and 32 s
 
 Choose either `house-style` or the language/design plugins. Installing both duplicates the house skills.
 
-The commands below passed with a local repository path; installation from the published remote has not yet been tested.
+The Claude Code commands below passed against this published repository on 2026-11-25; the Codex and `npx skills` commands passed with a local repository path.
 
 Claude Code, a whole language:
 
